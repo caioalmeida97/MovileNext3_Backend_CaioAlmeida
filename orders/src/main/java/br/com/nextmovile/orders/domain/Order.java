@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.com.nextmovile.orders.infrastructure.exceptions.InvalidClientNameException;
 
+
 public class Order {
 	
 	private String client;
@@ -16,7 +17,7 @@ public class Order {
 		private List<Product> products;
 		
 		public Builder(String client) {
-			if(client.equals(""))
+			if(client.equals("") || client == null)
 				throw new InvalidClientNameException("The client name must not be empty!");
 			this.client = client;
 		}
