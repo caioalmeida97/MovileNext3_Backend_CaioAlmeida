@@ -1,10 +1,13 @@
 package br.com.nextmovile.orders.domain;
 
+import javax.validation.constraints.NotEmpty;
+
 import br.com.nextmovile.orders.infrastructure.exceptions.EmptyProductNameException;
 import br.com.nextmovile.orders.infrastructure.exceptions.InvalidProductPriceException;
 import br.com.nextmovile.orders.infrastructure.exceptions.InvalidProductWeightException;
 
 public class Product {
+	
 	private String name;
 	private double price;
 	private double weight;
@@ -22,7 +25,8 @@ public class Product {
 			throw new InvalidProductWeightException("Product weight must be greater than zero");
 		this.weight = weight;
 	}
-
+	
+	@NotEmpty(message = "Product name can't be null")
 	public String getName() {
 		return name;
 	}
@@ -31,6 +35,7 @@ public class Product {
 		this.name = name;
 	}
 
+	@NotEmpty(message = "Product price must be greater than zero")
 	public double getPrice() {
 		return price;
 	}
@@ -39,6 +44,7 @@ public class Product {
 		this.price = price;
 	}
 
+	@NotEmpty(message = "Product weight must be greater than zero")
 	public double getWeight() {
 		return weight;
 	}
@@ -46,6 +52,5 @@ public class Product {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-	
 	
 }

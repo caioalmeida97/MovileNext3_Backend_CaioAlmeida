@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.nextmovile.orders.domain.Client;
 import br.com.nextmovile.orders.domain.Order;
 import br.com.nextmovile.orders.infrastructure.OrderRepository;
 import br.com.nextmovile.orders.infrastructure.exceptions.InvalidIdException;
@@ -47,6 +48,12 @@ public class OrderServiceImplementation implements OrderService {
 		if (id == null || id.equals(""))
 			throw new InvalidIdException("Id must not be null");
 		this.orderRepository.deleteById(id);
+	}
+
+	@Override
+	public Client findClientById(String id) {
+		// Not implemented
+		return null;
 	}
 
 }
