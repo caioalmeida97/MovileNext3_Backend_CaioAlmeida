@@ -18,7 +18,7 @@ To run this project, download it or clone it, open a terminal window and follow 
 Open another terminal window and run the project by running the following commands:
 
     $ cd /path/of/the/project/orders2
-    $ mvn install
+    $ mvn spring-boot:run
   
 If you face the issue
 
